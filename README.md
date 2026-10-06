@@ -6,8 +6,10 @@ BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoCo
 Query](https://img.shields.io/badge/Power%20Query-ETL-green) ![Retail
 Analytics](https://img.shields.io/badge/Domain-Retail-purple)
 
-
 #  Project Overview
+
+<img width="1672" height="941" alt="stylo dashboard" src="https://github.com/user-attachments/assets/7b513da5-1efa-402b-8328-20fa258aee20" />
+
 
 ## Retail Operations Dashboard – Stylo Pakistan (Simulated)
 
@@ -161,6 +163,8 @@ This page evaluates the performance of individual stores.
 ---
 
 #  Page 3 — Product Performance Dashboard
+
+<img width="1159" height="995" alt="3" src="https://github.com/user-attachments/assets/fc13e71c-8a95-49b2-b6e7-a12625b5c9dc" />
 
 Analyzes products and product categories.
 
