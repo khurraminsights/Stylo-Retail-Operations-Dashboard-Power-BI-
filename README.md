@@ -1,112 +1,89 @@
-# Stylo-Retail-Operations-Dashboard-PowerBI
+# Stylo Pakistan | Retail Operations & Profitability Intelligence
 
-![Power
-BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-Measures-blue) ![Power
-Query](https://img.shields.io/badge/Power%20Query-ETL-green) ![Retail
-Analytics](https://img.shields.io/badge/Domain-Retail-purple)
+### 286M in Reported Sales. 60 Stores. One Retail Performance Story.
 
-#  Project Overview
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black) ![DAX](https://img.shields.io/badge/DAX-Measures-blue) ![Power Query](https://img.shields.io/badge/Power%20Query-ETL-green) ![Retail Analytics](https://img.shields.io/badge/Domain-Retail-purple)
 
-<img width="1672" height="941" alt="stylo dashboard" src="https://github.com/user-attachments/assets/7b513da5-1efa-402b-8328-20fa258aee20" />
+**Power BI | Power Query | DAX | Star Schema | Retail Analytics**
 
+<img width="1672" height="941" alt="Stylo retail operations dashboard overview" src="https://github.com/user-attachments/assets/7b513da5-1efa-402b-8328-20fa258aee20" />
 
-## Retail Operations Dashboard – Stylo Pakistan (Simulated)
-
-This project is an end-to-end **Retail Operations Dashboard** developed in **Microsoft Power BI** using a simulated dataset inspired by **Stylo Pakistan**, one of Pakistan's leading fashion footwear and lifestyle retailers.
-
-The dashboard replicates a real-world **retail analytics** solution by transforming raw transactional data into an interactive, executive-ready Business Intelligence platform. It enables decision-makers to monitor business performance, evaluate store operations, and analyze product performance through dynamic dashboards, KPIs, and data visualizations.
-
-Designed following industry best practices, the solution incorporates **Star Schema data modeling**, **Power Query ETL**, **DAX calculations**, and interactive reporting to deliver meaningful insights for retail management.
+> **Portfolio context:** An independent project using a **simulated dataset inspired by Stylo Pakistan**. Results below are dashboard-reported figures for the simulation, not verified Stylo company performance or evidence of an employer engagement.
 
 ---
 
-##  Business Objective
+## Executive Overview
 
-Retail organizations generate thousands of transactions every day across multiple stores, products, and customer segments. Without a centralized reporting solution, it becomes difficult to identify performance trends and make timely, data-driven decisions.
+**Strong sales are only the beginning of a useful retail story.** Management also needs to understand *where* revenue originates, *which* products contribute, *how* stores perform, and *whether* returns or channel concentration deserve attention.
 
-This dashboard serves as a **single source of truth**, enabling management to answer key business questions such as:
+I developed a three-page Power BI retail operations dashboard to bring sales, profit, stores, products, channels, and customer-related indicators into one interactive reporting experience. The project uses Power Query, a star-schema model, and DAX measures to translate transaction-level records into practical management questions.
 
-- Which stores, cities, and provinces are driving or slowing overall revenue?
-- How are sales, profit, and profit margins performing over time?
-- Which product categories and individual products generate the highest sales and profitability?
-- How do different store types perform against each other?
-- What is the current return rate, and how does it impact business performance?
-- Which sales channels contribute the most revenue?
-- How are customer ratings distributed across stores and products?
-- Which business areas require management attention to improve operational performance?
-
-By consolidating retail data into a single interactive dashboard, this project helps stakeholders monitor KPIs, identify trends, compare performance across dimensions, and make informed strategic decisions.
+**Central question:** *How can retail leaders move beyond headline sales and identify the stores, product groups, and channels that merit closer attention?*
 
 ---
 
-#  Business Problem
+## Executive KPI Snapshot
 
-Retail companies generate thousands of transactions daily across multiple stores, products, and cities.
+| KPI | Dashboard-reported value | What it helps assess |
+|---|---:|---|
+| Total Sales | **286M** | Overall sales scale |
+| Total Profit | **132.93M** | Profit contribution |
+| Profit Margin | **47%** | Profitability relative to sales |
+| Total Orders | **26K** | Order activity |
+| Average Order Value | **10.98K** | Sales per order |
+| Return Rate | **7%** | Reported return exposure |
+| Total Stores | **60** | Store footprint |
+| Average Customer Rating | **4.05** | Recorded customer ratings |
 
-Management often struggles to answer questions such as:
-
-- Which stores generate the highest sales?
-- Which product categories drive revenue?
-- Which products are most profitable?
-- Which provinces perform best?
-- How many products are being returned?
-- What is the Average Order Value?
-- Which sales channel contributes the most revenue?
-
-The objective of this dashboard is to convert raw retail data into actionable business insights.
-
----
-
-#  Tools & Technologies
-
-- Microsoft Power BI Desktop
-- Power Query
-- DAX
-- Data Modeling
-- Star Schema
-- Data Visualization
+*Values and units are presented as reported in the supplied project description; underlying data has not been independently audited here.*
 
 ---
 
-#  Dataset
+## 01 | The Business Challenge
 
-The project uses a retail dataset containing:
+### Many Transactions. One Need for Clarity.
 
-### Fact Table
+A multi-store retailer has to evaluate performance across cities, provinces, store types, product categories, and sales channels. Disconnected transaction reports make it harder to distinguish a high-sales category from a truly profitable one, or a leading store from one that is underperforming relative to its peers.
 
-- FactSales
+This case study explores four management questions:
 
-### Dimension Tables
+1. **Growth:** Which stores, cities, and categories contribute most to sales?
+2. **Profitability:** How do profit and margin vary across products and stores?
+3. **Channel mix:** How dependent is the simulated business on physical stores versus online orders?
+4. **Experience and returns:** Which customer-rating and return indicators warrant follow-up?
 
-- DimDate
-- DimStore
-- DimProduct
-- DimCustomer
-- DimEmployee
-- DimPromotion
-- DimPaymentMethod
-
---- 
-
-#  Data Model
-
-<img width="1622" height="969" alt="ChatGPT Image Jul 10, 2026, 09_37_33 AM" src="https://github.com/user-attachments/assets/de8adaea-b40c-474a-a65a-375ea068cf58" />
-
-#  Dashboard Pages
+**Objective:** Create an interactive, cross-filtered performance view that supports more focused retail decisions.
 
 ---
 
-#  Page 1 — Executive Overview
+## 02 | How I Approached the Analysis
 
-<img width="1153" height="675" alt="1" src="https://github.com/user-attachments/assets/d3beac89-e602-49ed-8ff2-953209b92c9b" />
+### From Transaction Records to Decision-Ready Views
 
-This page provides management with a high-level overview of overall business performance.
+**Step 1 — Prepare the data.** Used **Power Query** to support the ETL workflow for the retail dataset.
 
-## KPIs
+**Step 2 — Model the business.** Organized the reporting model as a **star schema** with one sales fact table and seven related dimensions:
 
-| KPI | Value |
-|------|--------|
+| Fact table | Dimension tables |
+|---|---|
+| `FactSales` | `DimDate`, `DimStore`, `DimProduct`, `DimCustomer`, `DimEmployee`, `DimPromotion`, `DimPaymentMethod` |
+
+**Step 3 — Define consistent measures.** Created DAX calculations for sales, profit, order volume, order value, margin, returns, store averages, and product averages.
+
+**Step 4 — Communicate the findings.** Structured three interactive reporting pages around the decisions of executives, store managers, and merchandising teams.
+
+<img width="1622" height="969" alt="Stylo retail analytics star schema data model" src="https://github.com/user-attachments/assets/de8adaea-b40c-474a-a65a-375ea068cf58" />
+
+---
+
+## 03 | Dashboard Story: Three Views, Three Decisions
+
+### Page 1 — Executive Overview: Where Is Retail Performance Coming From?
+
+<img width="1153" height="675" alt="Stylo Power BI executive overview" src="https://github.com/user-attachments/assets/d3beac89-e602-49ed-8ff2-953209b92c9b" />
+
+| KPI | Reported value |
+|---|---:|
 | Total Sales | **286M** |
 | Total Profit | **132.93M** |
 | Profit Margin | **47%** |
@@ -114,32 +91,20 @@ This page provides management with a high-level overview of overall business per
 | Average Order Value | **10.98K** |
 | Return Rate | **7%** |
 
-## Visuals
+**What the dashboard shows:** Monthly sales trends, sales by product category, city, and order channel.
 
-- Monthly Sales Trend
-- Sales by Product Category
-- Sales by City
-- Sales by Order Channel
+**Insight — Sales rely heavily on physical stores.** Store purchases account for approximately **80%** of reported revenue, compared with **20%** online. **Women's Shoes** is the leading sales category, and major cities contribute a substantial share of the business.
 
-## Business Insights
+**Why it matters:** A store-heavy channel mix makes physical location performance central to revenue monitoring. Online sales represent a smaller but identifiable channel to evaluate on its own merits.
 
-- Women's Shoes generated the highest sales.
-- Store sales contributed approximately **80%** of total revenue.
-- Online sales contributed approximately **20%**.
-- Major cities dominated overall revenue.
+**Suggested action:** Compare channel profitability, sales trends, and customer behavior before deciding where to prioritize commercial investment.
 
----
+### Page 2 — Store Performance: Are All Locations Contributing Equally?
 
-#  Page 2 — Store Performance Dashboard
+<img width="1136" height="629" alt="Stylo Power BI store performance dashboard" src="https://github.com/user-attachments/assets/eccd87af-cb0a-4cb7-a625-a04d8a1c27cd" />
 
-<img width="1136" height="629" alt="2" src="https://github.com/user-attachments/assets/eccd87af-cb0a-4cb7-a625-a04d8a1c27cd" />
-
-This page evaluates the performance of individual stores.
-
-## KPIs
-
-| KPI | Value |
-|------|--------|
+| KPI | Reported value |
+|---|---:|
 | Total Stores | **60** |
 | Average Sales per Store | **4.76M** |
 | Average Profit per Store | **2.22M** |
@@ -147,31 +112,20 @@ This page evaluates the performance of individual stores.
 | Total Customers | **5K** |
 | Return Rate | **7%** |
 
-## Visuals
+**What the dashboard shows:** Store-level performance matrix, top 10 stores, provincial sales, and city comparisons.
 
-- Store Performance Matrix
-- Top 10 Stores by Sales
-- Sales by Province
-- Sales by City
+**Insight — Regional and store-level performance is uneven.** **Punjab** is the leading province by reported sales. Top-performing stores exceed **7M** in sales, while average recorded customer ratings are above **4.0**.
 
-## Business Insights
+**Why it matters:** Regional leaders and store averages can be useful benchmarks, but high sales alone do not establish superior efficiency or profitability.
 
-- Punjab generated the highest sales.
-- Top-performing stores generated over **7M** in sales.
-- Average customer rating remained above **4.0**.
+**Suggested action:** Compare stores using sales, profit, return rate, rating, and store type together; investigate the reasons behind meaningful outliers.
 
----
+### Page 3 — Product Performance: Which Products Deserve More Attention?
 
-#  Page 3 — Product Performance Dashboard
+<img width="1159" height="995" alt="Stylo Power BI product performance dashboard" src="https://github.com/user-attachments/assets/fc13e71c-8a95-49b2-b6e7-a12625b5c9dc" />
 
-<img width="1159" height="995" alt="3" src="https://github.com/user-attachments/assets/fc13e71c-8a95-49b2-b6e7-a12625b5c9dc" />
-
-Analyzes products and product categories.
-
-## KPIs
-
-| KPI | Value |
-|------|--------|
+| KPI | Reported value |
+|---|---:|
 | Total Products | **250** |
 | Total Categories | **7** |
 | Average Product Sales | **1.14M** |
@@ -179,76 +133,55 @@ Analyzes products and product categories.
 | Average Selling Price | **4.97K** |
 | Return Rate | **7%** |
 
-## Visuals
+**What the dashboard shows:** Leading products, category sales and profit, material contribution, gender-segment sales, and a detailed product table.
 
-- Top Products by Sales
-- Sales by Product Category
-- Profit by Category
-- Sales Contribution by Material
-- Sales by Gender
-- Product Performance Table
+**Insight — Category and assortment mix shape sales.** **Women's Shoes** leads category sales; **Silk** leads the reported material contribution; products classified as **Female** represent approximately **75%** of sales.
 
-## Business Insights
+**Why it matters:** Revenue contribution reveals where demand is concentrated but should be interpreted alongside margin and returns before making assortment decisions.
 
-- Women's Shoes remained the highest-performing category.
-- Silk products generated the largest material contribution.
-- Female products represented approximately **75%** of total sales.
+**Suggested action:** Evaluate high-revenue product segments against profitability and return behavior to identify potential merchandising priorities.
 
 ---
 
-#  DAX Measures
+## 04 | From Findings to Management Questions
 
-## Total Sales
+| Priority | Signal from dashboard | Management question | Proposed next step |
+|---|---|---|---|
+| High | ~80% of sales through stores | Are locations equally productive and profitable? | Compare store-level sales, profit, and returns |
+| High | Women's Shoes leads sales | Does the largest category also lead profit? | Review category margins and product contributions |
+| Medium | Punjab leads provincial sales | Which markets are over- or underperforming relative to their footprint? | Compare cities and stores with appropriate baselines |
+| Medium | 7% reported return rate | Where are returns concentrated? | Segment returns by product, store, and channel |
+| Medium | Average rating of 4.05 | Are weaker ratings associated with any specific segments? | Analyze rating distributions, not just averages |
+
+*These are analytical follow-ups and recommendations, not claimed implemented improvements.*
+
+---
+
+## 05 | Core DAX Measures
+
+The following expressions are preserved from the supplied project documentation.
+
+### Sales, Profit, and Orders
 
 ```DAX
 Total Sales =
 SUM(FactSales[NetSales])
-```
 
----
-
-## Total Profit
-
-```DAX
 Total Profit =
 SUM(FactSales[Profit])
-```
 
----
-
-## Total Orders
-
-```DAX
 Total Orders =
 DISTINCTCOUNT(FactSales[InvoiceID])
-```
 
----
-
-## Total Quantity
-
-```DAX
 Total Quantity =
 SUM(FactSales[Quantity])
-```
 
----
-
-## Average Order Value
-
-```DAX
 Average Order Value =
 DIVIDE(
     [Total Sales],
     [Total Orders]
 )
-```
 
----
-
-## Profit Margin %
-
-```DAX
 Profit Margin % =
 DIVIDE(
     [Total Profit],
@@ -256,9 +189,7 @@ DIVIDE(
 )
 ```
 
----
-
-## Return Orders
+### Returns
 
 ```DAX
 Return Orders =
@@ -266,13 +197,7 @@ CALCULATE(
     COUNTROWS(FactSales),
     FactSales[Returned] = "Yes"
 )
-```
 
----
-
-## Return Rate %
-
-```DAX
 Return Rate % =
 DIVIDE(
     [Return Orders],
@@ -280,169 +205,86 @@ DIVIDE(
 )
 ```
 
----
+> **Measure-definition check:** `Return Orders` counts rows marked returned while `Total Orders` counts distinct invoices. If invoices can contain multiple rows, the resulting rate may not represent the share of distinct orders returned. Validate the dataset grain and intended denominator before treating 7% as an order-level return rate.
 
-## Total Stores
+### Stores and Customer Experience
 
 ```DAX
 Total Stores =
 DISTINCTCOUNT(DimStore[StoreID])
-```
 
----
-
-## Average Sales per Store
-
-```DAX
 Avg Store Sales =
 DIVIDE(
     [Total Sales],
     [Total Stores]
 )
-```
 
----
-
-## Average Profit per Store
-
-```DAX
 Avg Profit Store =
 DIVIDE(
     [Total Profit],
     [Total Stores]
 )
-```
 
----
-
-## Average Rating
-
-```DAX
 Average Rating =
 AVERAGE(FactSales[Rating])
-```
 
----
-
-## Total Customers
-
-```DAX
 Total Customers =
 DISTINCTCOUNT(FactSales[CustomerID])
 ```
 
----
-
-## Total Products
+### Product Performance
 
 ```DAX
 Total Products =
 DISTINCTCOUNT(DimProduct[ProductID])
-```
 
----
-
-## Total Categories
-
-```DAX
 Total Categories =
 DISTINCTCOUNT(DimProduct[Category])
-```
 
----
-
-## Average Product Sales
-
-```DAX
 Avg Product Sales =
 DIVIDE(
     [Total Sales],
     [Total Products]
 )
-```
 
----
-
-## Average Product Profit
-
-```DAX
 Avg Product Profit =
 DIVIDE(
     [Total Profit],
     [Total Products]
 )
-```
 
----
-
-## Average Selling Price
-
-```DAX
 Average Selling Price =
 AVERAGE(FactSales[UnitPrice])
 ```
 
 ---
 
-#  Interactive Filters
+## 06 | Interactive Analysis
 
-The dashboard supports dynamic filtering through:
-
-- Year
-- Month
-- Province
-- Store Type
-- Category
-- Material
-- Membership Type
-- Order Channel
-- Store Name
-
-All visuals interact automatically through cross-filtering.
+The report supports cross-filtering across **Year, Month, Province, Store Type, Category, Material, Membership Type, Order Channel, and Store Name**. These controls allow users to move from overall performance to more specific operational comparisons.
 
 ---
 
-#  Key Insights
+## 07 | Skills Demonstrated
 
-- Total Revenue reached **286M**.
-- Overall Profit reached **132.93M**.
-- Profit Margin remained at **47%**.
-- More than **26,000 orders** were analyzed.
-- Women's Shoes generated the highest revenue.
-- Punjab was the best-performing province.
-- Store sales accounted for approximately **80%** of total revenue.
-- Online sales represented approximately **20%**.
-- Return Rate remained low at **7%**.
-- Average customer rating remained above **4.0**.
+- **Power BI:** Three-page dashboard design, KPI reporting, interactive filtering
+- **Power Query:** Data preparation and ETL workflow
+- **DAX:** Measures for revenue, profit, orders, averages, margins, and returns
+- **Data Modeling:** Star schema using `FactSales` and seven dimensions
+- **Retail Analysis:** Channel mix, store performance, regional comparisons, merchandising insights
+- **Data Storytelling:** Translating dashboard results into management questions and proposed actions
 
 ---
 
-#  Skills Demonstrated
+## 08 | Repository Structure (Documented Layout)
 
-- Power BI
-- Power Query
-- DAX
-- Data Cleaning
-- Data Modeling
-- Star Schema
-- Retail Analytics
-- Business Intelligence
-- KPI Development
-- Dashboard Design
-- Interactive Reporting
-- Executive Reporting
+The supplied project description lists the following intended repository organization. Confirm paths against the actual GitHub repository before using them as download links.
 
----
-
-#  Repository Structure
-
-```
-Stylo-Retail-Operations-Dashboard
-│
-├── Dashboard
+```text
+Stylo-Retail-Operations-Dashboard/
+├── Dashboard/
 │   └── Stylo Retail Operations Dashboard.pbix
-│
-├── Dataset
+├── Dataset/
 │   ├── FactSales.csv
 │   ├── DimProduct.csv
 │   ├── DimStore.csv
@@ -451,43 +293,43 @@ Stylo-Retail-Operations-Dashboard
 │   ├── DimEmployee.csv
 │   ├── DimPromotion.csv
 │   └── DimPaymentMethod.csv
-│
-├── Images
+├── Images/
 │   ├── Executive Overview.png
 │   ├── Store Performance.png
 │   └── Product Performance.png
-│
 └── README.md
 ```
 
----
-
-#  Future Enhancements
-
-- Customer Insights Dashboard
-- Inventory Analysis
-- Sales Forecasting
-- Time Intelligence (MTD, QTD, YTD)
-- Drill-through Pages
-- Power BI Service Deployment
-- Row-Level Security (RLS)
+**Availability note:** A listed file path in this documentation does not by itself confirm the file is uploaded. The linked screenshots above are the supplied image assets.
 
 ---
 
-# Author
+## 09 | Future Enhancements
 
-**Khurram**
+- Customer insights and cohort analysis
+- Inventory availability and stock planning
+- Forecasting, after validating appropriate historical data
+- MTD, QTD, and YTD time-intelligence measures
+- Drill-through analysis by store and product
+- Power BI Service publication, where appropriate
+- Row-level security for role-based reporting
+- Validation of measures and reconciliation with the source dataset
 
-Aspiring Data Analyst with hands-on experience in:
+---
 
-- Microsoft Power BI
-- SQL Server
-- Advanced Excel
-- Power Query
-- DAX
+## Final Business Takeaway
 
-Passionate about transforming business data into actionable insights through modern Business Intelligence solutions.
+### Sales Show the Scale. Store, Product, and Channel Analysis Explain the Mix.
 
+The Stylo retail simulation demonstrates how a structured Power BI model can turn transaction records into a cohesive performance story: **what sells, where revenue is concentrated, which stores merit comparison, and what additional evidence management should examine before acting.**
 
+**My approach: Frame the business question. Build a consistent measure. Interpret the result. Recommend the next investigation.**
 
+---
+
+**Khurram Naveed | Data Analyst**
+
+[GitHub](https://github.com/khurraminsights) · [LinkedIn](https://www.linkedin.com/in/khurram-naveed-0083851aa/)
+
+*Independent portfolio case study using simulated retail data; not official reporting for Stylo Pakistan.*
 
